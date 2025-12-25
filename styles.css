@@ -1,0 +1,185 @@
+:root {
+    --primary: #0d47a1;
+    --secondary: #1976d2;
+    --accent: #ffc107;
+    --bg: #f4f7f9;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.live-indicator {
+    background: #d32f2f;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    background: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav button {
+    flex: 1;
+    padding: 15px 5px;
+    border: none;
+    background: none;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+    font-size: 0.85em;
+}
+
+nav button.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.container {
+    padding: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Tablas de Clasificación */
+.group-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+    margin-top: 0;
+    color: var(--primary);
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85em;
+}
+
+th {
+    text-align: left;
+    color: #888;
+    padding: 8px 4px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 4px;
+    border-top: 1px solid #eee;
+}
+
+.team {
+    font-weight: bold;
+    color: #222;
+}
+
+.pts {
+    font-weight: 900;
+    color: var(--primary);
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Partidos */
+.match-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.score {
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.match-info {
+    font-size: 0.75em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+/* Cuadro Final */
+.bracket {
+    border-left: 3px solid var(--accent);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.bracket-round {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--secondary);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

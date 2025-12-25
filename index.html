@@ -3,52 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneo Local 2025</title>
-    <style>
-        :root { --primary: #0d47a1; --secondary: #1976d2; --accent: #ffc107; --bg: #f4f7f9; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #333; }
-        
-        /* Header */
-        header { background: var(--primary); color: white; padding: 25px 15px; text-align: center; }
-        .live-indicator { background: #d32f2f; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold; animation: pulse 2s infinite; }
-        
-        /* Navegación */
-        nav { display: flex; background: white; sticky: top; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
-        nav button { flex: 1; padding: 15px 5px; border: none; background: none; font-weight: 700; color: #666; cursor: pointer; border-bottom: 3px solid transparent; transition: 0.3s; font-size: 0.85em; }
-        nav button.active { color: var(--primary); border-bottom-color: var(--primary); }
-
-        .container { padding: 15px; max-width: 600px; margin: auto; }
-        .section { display: none; }
-        .section.active { display: block; animation: slideIn 0.3s ease-out; }
-
-        /* Tablas de Clasificación */
-        .group-card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        h3 { margin-top: 0; color: var(--primary); border-bottom: 2px solid var(--bg); padding-bottom: 10px; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
-        th { text-align: left; color: #888; padding: 8px 4px; font-weight: 600; }
-        td { padding: 12px 4px; border-top: 1px solid #eee; }
-        .team { font-weight: bold; color: #222; }
-        .pts { font-weight: 900; color: var(--primary); text-align: center; }
-        .center { text-align: center; }
-
-        /* Partidos */
-        .match-card { background: white; border-radius: 10px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .score { font-size: 1.2em; font-weight: bold; background: #eee; padding: 5px 10px; border-radius: 5px; min-width: 50px; text-align: center; }
-        .match-info { font-size: 0.75em; color: #777; margin-bottom: 5px; }
-
-        /* Cuadro Final */
-        .bracket { border-left: 3px solid var(--accent); padding-left: 15px; margin-bottom: 20px; }
-        .bracket-round { font-size: 0.8em; font-weight: bold; color: var(--secondary); text-transform: uppercase; margin-bottom: 10px; }
-
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-        @keyframes slideIn { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    </style>
+    <title>Torneo Solidario 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="grupos.js"></script>
 </head>
 <body>
 
 <header>
     <span class="live-indicator">● EN DIRECTO</span>
-    <h1 style="margin: 10px 0 5px 0; font-size: 1.4em;">COPA DE CAMPEONES 2025</h1>
+    <h1 style="margin: 10px 0 5px 0; font-size: 1.4em;">TORNEO SOLIDARIO 2025</h1>
 </header>
 
 <nav id="main-nav">
@@ -61,30 +24,68 @@
     <div id="grupos" class="section active">
         <div class="group-card">
             <h3>Grupo A</h3>
-            <table>
+            <table id="grupoA">
                 <thead>
-                    <tr><th>Equipo</th><th class="center">PJ</th><th class="center">DG</th><th class="center">PTS</th></tr>
+                    <tr>
+                        <th>Equipo</th>
+                        <th class="center">PJ</th>
+                        <th class="center">V</th>
+                        <th class="center">E</th>
+                        <th class="center">D</th>
+                        <th class="center">GF</th>
+                        <th class="center">GC</th>
+                        <th class="center">DG</th>
+                        <th class="center">PTS</th>
+
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="team">Titanes FC</td><td class="center">3</td><td class="center">+5</td><td class="pts">9</td></tr>
-                    <tr><td class="team">Rayo Vallecas</td><td class="center">3</td><td class="center">+2</td><td class="pts">6</td></tr>
-                    <tr><td class="team">Sporting B</td><td class="center">3</td><td class="center">-1</td><td class="pts">3</td></tr>
-                    <tr><td class="team">Leones CD</td><td class="center">3</td><td class="center">-6</td><td class="pts">0</td></tr>
+                    
                 </tbody>
             </table>
         </div>
 
         <div class="group-card">
             <h3>Grupo B</h3>
-            <table>
+            <table id="grupoB">
                 <thead>
-                    <tr><th>Equipo</th><th class="center">PJ</th><th class="center">DG</th><th class="center">PTS</th></tr>
+                    <tr>
+                        <th>Equipo</th>
+                        <th class="center">PJ</th>
+                        <th class="center">V</th>
+                        <th class="center">E</th>
+                        <th class="center">D</th>
+                        <th class="center">GF</th>
+                        <th class="center">GC</th>
+                        <th class="center">DG</th>
+                        <th class="center">PTS</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="team">Águilas Reales</td><td class="center">3</td><td class="center">+4</td><td class="pts">7</td></tr>
-                    <tr><td class="team">Fénix Club</td><td class="center">3</td><td class="center">+1</td><td class="pts">5</td></tr>
-                    <tr><td class="team">Inter City</td><td class="center">3</td><td class="center">0</td><td class="pts">4</td></tr>
-                    <tr><td class="team">Halcones</td><td class="center">3</td><td class="center">-5</td><td class="pts">0</td></tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="group-card">
+            <h3>Grupo C</h3>
+            <table id="grupoC">
+                <thead>
+                    <tr>
+                        <th>Equipo</th>
+                        <th class="center">PJ</th>
+                        <th class="center">V</th>
+                        <th class="center">E</th>
+                        <th class="center">D</th>
+                        <th class="center">GF</th>
+                        <th class="center">GC</th>
+                        <th class="center">DG</th>
+                        <th class="center">PTS</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
                 </tbody>
             </table>
         </div>
