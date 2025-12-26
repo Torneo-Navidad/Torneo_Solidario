@@ -79,6 +79,4 @@ function pintarGrupo(letra, datos) {
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarGrupos();
-
-    setInterval(cargarGrupos, 10000);
 });
