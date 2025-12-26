@@ -41,8 +41,8 @@ function pintarPartidos(partidos) {
             div.innerHTML = `
                 <span>${p.Local}</span>
                 <div class="score-box">
-                    <span class="score">${marcador}</span>
                     <span class="hora">${p.Hora || ""}</span>
+                    <span class="score">${marcador}</span>
                 </div>
                 <span>${p.Visitante}</span>
             `;
