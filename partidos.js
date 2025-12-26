@@ -40,7 +40,10 @@ function pintarPartidos(partidos) {
             div.className = "match-card";
             div.innerHTML = `
                 <span>${p.Local}</span>
-                <span class="score">${marcador}</span>
+                <div class="score-box">
+                    <span class="score">${marcador}</span>
+                    <span class="hora">${p.Hora || ""}</span>
+                </div>
                 <span>${p.Visitante}</span>
             `;
             contenedor.appendChild(div);
