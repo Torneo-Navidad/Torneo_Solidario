@@ -8,8 +8,10 @@ async function cargarPartidos() {
         complete: function (results) {
             const partidos = results.data.filter(p => p.Fase === "Fase de Grupos");
             pintarPartidos(partidos);
+            const data = results.data;
         }
     });
+
 }
 
 function pintarPartidos(partidos) {
@@ -51,6 +53,7 @@ function pintarPartidos(partidos) {
     });
 }
 
+function pintarEliminatorias(partidos) {
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarPartidos();
