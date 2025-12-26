@@ -126,39 +126,39 @@ td {
 
 .match-card {
     display: grid;
-    grid-template-columns: 1fr 80px 1fr;
+    grid-template-columns: 1fr 120px 1fr;
     align-items: center;
+    justify-items: center;   /* <-- CLAVE */
     background: white;
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.match-card span:first-child {
-    text-align: right;
-    padding-right: 30px;
-    font-weight: 500;
-}
-
-.match-card .score {
     text-align: center;
-    font-weight: bold;
-    background: #eee;
-    padding: 5px 10px;
-    border-radius: 6px;
 }
 
+.match-card span {
+    text-align: center;
+}
+
+/* Equipo izquierda */
+.match-card span:first-child {
+    justify-self: end;
+    padding-right: 10px;
+}
+
+/* Equipo derecha */
 .match-card span:last-child {
-    text-align: left;
-    padding-left: 30px;
+    justify-self: start;
+    padding-left: 10px;
 }
 
+/* Marcador */
 .score-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
 }
 
 .score {
@@ -169,16 +169,6 @@ td {
 .hora {
     font-size: 0.75rem;
     color: #777;
-}
-
-.score {
-    font-size: 1.2em;
-    font-weight: bold;
-    background: #eee;
-    padding: 5px 10px;
-    border-radius: 5px;
-    min-width: 50px;
-    text-align: center;
 }
 
 .match-info {
